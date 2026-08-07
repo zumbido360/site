@@ -1,6 +1,8 @@
 import { ArrowUpRight } from './Icons.jsx'
 
-const CHECKOUT = '#checkout'
+/* destino padrão de todo CTA: a seção de lotes.
+   Só os cards de lote passam um href próprio (o checkout da Kiwify). */
+const SECAO_LOTES = '#investimento'
 
 /**
  * CTA primário (pill) — texto sempre "Garantir minha vaga".
@@ -8,7 +10,7 @@ const CHECKOUT = '#checkout'
  */
 export default function Button({
   children = 'Garantir minha vaga',
-  href = CHECKOUT,
+  href = SECAO_LOTES,
   variant = 'primary',
   id,
   className = '',

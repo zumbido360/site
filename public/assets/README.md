@@ -22,4 +22,4 @@ Arquivos abaixo são **placeholders** (SVG gerados). Substituir pelos finais man
 
 Ao trocar por raster (JPG/WebP), atualizar o `src` em `index.html` (extensão) e preferir WebP/AVIF com `loading="lazy"`.
 
-Também pendente: link real do checkout Kiwify — substituir `href="#checkout"` em todos os CTAs.
+Também pendente: links de checkout da Kiwify para o 2º e o 3º lote (o 1º já está ligado).

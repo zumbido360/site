@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
 /**
  * Scroll suave (Lenis) sincronizado com o ticker do GSAP e com o ScrollTrigger.
  * Não sequestra o scroll: só suaviza a inércia. Desligado em prefers-reduced-motion.
- * Links de âncora (#investimento, #checkout) passam pelo lenis.scrollTo.
+ * Links de âncora (#investimento) passam pelo lenis.scrollTo.
  */
 export function useSmoothScroll() {
   useEffect(() => {
