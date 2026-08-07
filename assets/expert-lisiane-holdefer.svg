@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" fill="none">
+  <rect width="300" height="400" fill="#203F41"/>
+  <circle cx="150" cy="150" r="60" fill="#FBFFFE" opacity=".12"/>
+  <path d="M70 320c0-44 36-80 80-80s80 36 80 80" fill="#FBFFFE" opacity=".12"/>
+  <text x="150" y="368" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="rgba(255,255,255,.5)">Dra. Lisiane Holdefer</text>
+</svg>

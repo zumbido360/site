@@ -1,0 +1,21 @@
+# dependências e build
+node_modules/
+dist/
+.vite/
+
+# Netlify
+.netlify/
+
+# ferramentas locais
+.claude/
+.DS_Store
+Thumbs.db
+
+# logs
+npm-debug.log*
+yarn-error.log*
+*.log
+
+# briefing e versão estática antiga: ficam só na pasta local
+docs/
+legacy/

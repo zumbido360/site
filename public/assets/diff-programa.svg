@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <rect width="600" height="400" fill="#0D1F20"/>
+  <g stroke="#22A1A6" stroke-width="1.4" opacity=".5" fill="none">
+    <path d="M60 340c60-30 120-60 180-40s120 80 200 40"/>
+    <circle cx="120" cy="120" r="8"/><circle cx="300" cy="90" r="8"/><circle cx="480" cy="150" r="8"/>
+    <path d="M120 120 300 90 480 150"/>
+  </g>
+  <text x="300" y="210" text-anchor="middle" font-family="Inter,sans-serif" font-size="16" fill="rgba(255,255,255,.3)">programa completo — placeholder</text>
+</svg>

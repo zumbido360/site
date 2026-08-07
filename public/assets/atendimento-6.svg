@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 640" width="900" height="640" role="img">
+  <defs>
+    <linearGradient id="g6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#203F41"/>
+      <stop offset="1" stop-color="#0D1F20"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="640" fill="url(#g6)"/>
+  <circle cx="450" cy="268.8" r="102.4" fill="#FBFFFE" opacity=".10"/>
+  <path d="M283.6 588.8000000000001 a166.4 166.4 0 0 1 332.8 0 Z" fill="#FBFFFE" opacity=".10"/>
+  <text x="450" y="606" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="20" fill="#22A1A6" opacity=".8">[ Atendimento 6 — placeholder ]</text>
+</svg>

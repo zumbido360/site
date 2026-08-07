@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" fill="none">
+  <rect width="640" height="800" fill="#203F41"/>
+  <rect width="640" height="800" fill="url(#g)"/>
+  <defs>
+    <radialGradient id="g" cx="70%" cy="20%" r="90%">
+      <stop offset="0" stop-color="#2b5457"/><stop offset="1" stop-color="#0D1F20"/>
+    </radialGradient>
+  </defs>
+  <circle cx="320" cy="300" r="120" fill="#FBFFFE" opacity=".08"/>
+  <path d="M200 560c0-66 54-120 120-120s120 54 120 120" fill="#FBFFFE" opacity=".08"/>
+  <circle cx="320" cy="300" r="90" fill="#FBFFFE" opacity=".14"/>
+  <text x="320" y="700" text-anchor="middle" font-family="Inter,sans-serif" font-size="22" fill="rgba(255,255,255,.55)">[ Foto dos experts — placeholder ]</text>
+  <text x="320" y="730" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" fill="rgba(255,255,255,.35)">hero-experts-mockup</text>
+</svg>

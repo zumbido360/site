@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#0D1F20"/>
+  <g stroke="#22A1A6" stroke-width="1.4" opacity=".55" fill="none">
+    <circle cx="200" cy="180" r="70"/><circle cx="200" cy="180" r="40"/>
+    <path d="M40 180h90M270 180h90M200 40v90M200 230v90"/>
+  </g>
+  <text x="200" y="360" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="rgba(255,255,255,.3)">tecnologia — placeholder</text>
+</svg>
