@@ -5,8 +5,8 @@ import SeloGiratorio from '../components/SeloGiratorio.jsx'
 import { ArrowUpRight } from '../components/Icons.jsx'
 
 /* checkouts da aula bônus na Kiwify */
-const CHECKOUT_BONUS_COM_CURSO = 'https://pay.kiwify.com.br/FA52U9f'
-const CHECKOUT_BONUS_AVULSO = 'https://pay.kiwify.com.br/3q3CtFE'
+const CHECKOUT_BONUS_COM_CURSO = 'https://pay.kiwify.com.br/3q3CtFE'
+const CHECKOUT_BONUS_AVULSO = 'https://pay.kiwify.com.br/FA52U9f'
 
 const comCurso = [
   { lote: '1º lote', pix: 'R$ 400', cartao: 'R$ 500', destaque: true },
