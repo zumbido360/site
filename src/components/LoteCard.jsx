@@ -1,4 +1,5 @@
 import Button from './Button.jsx'
+import { mostrarAviso } from './Toast.jsx'
 
 /**
  * Card de lote. `tone`: light = sobre fundo escuro (seção Investimento);
@@ -73,7 +74,21 @@ export default function LoteCard({
 
       {!compact && (
         <div className="mt-8 pt-1">
-          <Button id={ctaId} href={href} full className="justify-between" />
+          {/* lote sem checkout ainda: avisa em vez de levar a lugar nenhum */}
+          <Button
+            id={ctaId}
+            href={href ?? '#'}
+            full
+            className="justify-between"
+            onClick={
+              href
+                ? undefined
+                : (event) => {
+                    event.preventDefault()
+                    mostrarAviso('O lote estará disponível em breve')
+                  }
+            }
+          />
         </div>
       )}
     </article>

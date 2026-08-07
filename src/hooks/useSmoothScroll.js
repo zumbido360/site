@@ -28,6 +28,9 @@ export function useSmoothScroll() {
     gsap.ticker.lagSmoothing(0)
 
     const onClick = (event) => {
+      // o clique já foi tratado por um handler da página (ex.: aviso de lote)
+      if (event.defaultPrevented) return
+
       const link = event.target.closest('a[href^="#"]')
       if (!link) return
 

@@ -1,6 +1,7 @@
 import Header from './components/Header.jsx'
 import Hero from './sections/Hero.jsx'
 import Ticker from './components/Ticker.jsx'
+import Toast from './components/Toast.jsx'
 import Apresentacao from './sections/Apresentacao.jsx'
 import ParaQuem from './sections/ParaQuem.jsx'
 import ComoFunciona from './sections/ComoFunciona.jsx'
@@ -62,6 +63,8 @@ export default function App() {
       </main>
 
       <Footer />
+
+      <Toast />
     </>
   )
 }
