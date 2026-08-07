@@ -21,10 +21,10 @@ export default function Footer() {
 
           <address className="not-italic text-small font-light text-gelo/60">
             <a
-              href="mailto:contato@institutoholdefer.com.br"
+              href="mailto:zumbido360fono@gmail.com"
               className="transition-colors hover:text-saude"
             >
-              contato@institutoholdefer.com.br
+              zumbido360fono@gmail.com
             </a>
           </address>
         </div>

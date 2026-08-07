@@ -4,7 +4,7 @@ import Reveal from '../components/Reveal.jsx'
 import { Shield, Flask, Lock } from '../components/Icons.jsx'
 
 /* checkout do 1º lote na Kiwify */
-const CHECKOUT_LOTE_1 = 'https://pay.kiwify.com.br/3q3CtFE?hideCard=true&hideBoleto=true'
+const CHECKOUT_LOTE_1 = 'https://pay.kiwify.com.br/Gdn4e8Y'
 
 const lotes = [
   {

@@ -4,6 +4,10 @@ import Reveal from '../components/Reveal.jsx'
 import SeloGiratorio from '../components/SeloGiratorio.jsx'
 import { ArrowUpRight } from '../components/Icons.jsx'
 
+/* checkouts da aula bônus na Kiwify */
+const CHECKOUT_BONUS_COM_CURSO = 'https://pay.kiwify.com.br/FA52U9f'
+const CHECKOUT_BONUS_AVULSO = 'https://pay.kiwify.com.br/3q3CtFE'
+
 const comCurso = [
   { lote: '1º lote', pix: 'R$ 400', cartao: 'R$ 500', destaque: true },
   { lote: '2º lote', pix: 'R$ 500', cartao: 'R$ 600' },
@@ -16,7 +20,7 @@ const soBonus = [
   { lote: '3º lote', pix: 'R$ 1.200', cartao: 'R$ 1.300' },
 ]
 
-function GrupoDeLotes({ titulo, lotes, prefix }) {
+function GrupoDeLotes({ titulo, lotes, prefix, cta, href }) {
   return (
     <div>
       <Reveal as="h3" className="text-h3 font-medium text-oceano">
@@ -26,10 +30,24 @@ function GrupoDeLotes({ titulo, lotes, prefix }) {
       <div className="mt-6 grid gap-4 sm:grid-cols-3">
         {lotes.map((lote) => (
           <Reveal key={`${prefix}-${lote.lote}`} className="h-full">
-            <LoteCard {...lote} tone="dark" compact />
+            <LoteCard {...lote} tone="dark" compact parcelamento={false} />
           </Reveal>
         ))}
       </div>
+
+      <Reveal className="mt-6">
+        <a
+          href={href}
+          id={`cta-${prefix}`}
+          data-cta={`cta-${prefix}`}
+          className="group inline-flex items-center gap-3 whitespace-nowrap rounded-pill bg-saude py-2 pl-6 pr-2 text-[0.9375rem] font-medium text-gelo transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
+        >
+          {cta}
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-gelo/95 text-saude transition-transform duration-300 group-hover:rotate-45">
+            <ArrowUpRight className="h-4 w-4" />
+          </span>
+        </a>
+      </Reveal>
     </div>
   )
 }
@@ -120,13 +138,17 @@ export default function AulaBonus() {
             <GrupoDeLotes
               titulo="Investimento — condição especial para quem se inscreve no curso completo"
               lotes={comCurso}
-              prefix="curso"
+              prefix="bonus-com-curso"
+              cta="Garantir a aula bônus"
+              href={CHECKOUT_BONUS_COM_CURSO}
             />
 
             <GrupoDeLotes
               titulo="Investimento — para inscritos apenas na aula bônus"
               lotes={soBonus}
-              prefix="bonus"
+              prefix="bonus-avulso"
+              cta="Garantir só a aula bônus"
+              href={CHECKOUT_BONUS_AVULSO}
             />
           </div>
 

@@ -10,6 +10,7 @@ export default function LoteCard({
   pix,
   cartao,
   condicao,
+  parcelamento = true,
   destaque = false,
   tone = 'light',
   compact = false,
@@ -57,6 +58,15 @@ export default function LoteCard({
         ) : (
           <p className={`mt-4 text-small font-light ${bodyColor}`}>
             ou <span className={`font-normal ${titleColor}`}>{cartao}</span> em cartão de crédito.
+          </p>
+        )}
+
+        {parcelamento && (
+          <p className={`mt-3 text-small font-light ${bodyColor}`}>
+            Ou também parcele em até <span className={`font-normal ${titleColor}`}>12x</span>
+            <span className={`mt-1 block text-[0.75rem] ${subColor}`}>
+              *contém juros da plataforma
+            </span>
           </p>
         )}
       </div>
