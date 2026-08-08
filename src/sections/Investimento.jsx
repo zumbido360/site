@@ -1,7 +1,7 @@
 import SectionTitle from '../components/SectionTitle.jsx'
 import LoteCard from '../components/LoteCard.jsx'
 import Reveal from '../components/Reveal.jsx'
-import { Shield, Flask, Lock } from '../components/Icons.jsx'
+import { Shield, Flask, Lock, Clock } from '../components/Icons.jsx'
 
 /* checkout do 1º lote na Kiwify */
 const CHECKOUT_LOTE_1 = 'https://pay.kiwify.com.br/Gdn4e8Y'
@@ -72,6 +72,16 @@ export default function Investimento() {
 
         <Reveal as="p" className="mt-7 text-center text-small font-light italic text-gelo/50">
           No Pix você garante o menor valor de cada lote.
+        </Reveal>
+
+        <Reveal className="mx-auto mt-6 flex max-w-2xl items-start justify-center gap-3 rounded-card border border-white/10 bg-white/[0.04] p-5">
+          <span className="mt-0.5 text-saude">
+            <Clock className="h-4 w-4" />
+          </span>
+          <p className="text-small font-light text-gelo/70">
+            O curso começa em <span className="text-gelo">24 de outubro de 2026</span> e as aulas
+            ficam gravadas em uma plataforma para alunos durante um ano.
+          </p>
         </Reveal>
 
         <Reveal className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">

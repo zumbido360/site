@@ -2,7 +2,7 @@ import SectionTitle from '../components/SectionTitle.jsx'
 import LoteCard from '../components/LoteCard.jsx'
 import Reveal from '../components/Reveal.jsx'
 import SeloGiratorio from '../components/SeloGiratorio.jsx'
-import { ArrowUpRight } from '../components/Icons.jsx'
+import { ArrowUpRight, Clock } from '../components/Icons.jsx'
 
 /* checkouts da aula bônus na Kiwify */
 const CHECKOUT_BONUS_COM_CURSO = 'https://pay.kiwify.com.br/3q3CtFE'
@@ -85,9 +85,10 @@ export default function AulaBonus() {
               </Reveal>
 
               <Reveal as="p" className="mt-5 max-w-measure text-body font-light text-ink-soft">
-                É destinada exclusivamente a fonoaudiólogos que atendam aos requisitos do Conselho
-                Federal de Fonoaudiologia (CFFa) para o uso de neuromodulação, conforme as
-                Resoluções CFFa nº 650/2022 e nº 662/2022, e a médicos legalmente habilitados.
+                Para atuação clínica com tDCS, o CFFa estabelece a necessidade de capacitação
+                teórico-prática, específica e adequada, além de conhecimento em Suporte Básico de
+                Vida, este de responsabilidade de cada profissional (Resolução CFFa nº 650/2022,
+                art. 3º e Resolução nº 652/2022).
               </Reveal>
             </div>
 
@@ -125,10 +126,12 @@ export default function AulaBonus() {
               </div>
 
               <p className="max-w-measure text-body font-light text-ink-soft">
-                Além da aula online, há uma manhã de treinamento prático presencial, com demonstração
-                dos equipamentos, discussão de protocolos e treinamento supervisionado. A prática
-                presencial é opcional, possui inscrição e investimento próprios e não está incluída
-                no valor da aula bônus.
+                Além da aula online, há um treinamento prático presencial em{' '}
+                <strong className="font-medium text-oceano">Brasília/DF, em maio de 2027</strong>, no
+                dia seguinte à prática do curso completo, com demonstração dos equipamentos,
+                discussão de protocolos e treinamento supervisionado. A prática presencial é
+                opcional, possui inscrição e investimento próprios e não está incluída no valor da
+                aula bônus.
               </p>
             </div>
           </Reveal>
@@ -154,6 +157,15 @@ export default function AulaBonus() {
 
           <Reveal as="p" className="mt-8 text-small font-light italic text-ink-faint">
             No Pix, o participante garante o menor valor de cada lote.
+          </Reveal>
+
+          <Reveal className="mt-5 flex items-start gap-3 rounded-card border border-line bg-surface p-5">
+            <span className="mt-0.5 text-saude">
+              <Clock className="h-4 w-4" />
+            </span>
+            <p className="text-small font-light text-ink-soft">
+              As aulas ficarão gravadas em uma plataforma para alunos durante um ano.
+            </p>
           </Reveal>
 
           {/* âncora para a seção de lotes do curso */}

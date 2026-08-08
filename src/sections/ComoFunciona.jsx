@@ -4,6 +4,7 @@ import Button from '../components/Button.jsx'
 import { withHighlight } from '../components/highlight.jsx'
 
 const bullets = [
+  { text: 'Início em 24 de outubro de 2026;', key: '24 de outubro de 2026' },
   { text: 'Carga horária total de 50 horas-aula;', key: '50 horas-aula' },
   {
     text: 'Um encontro principal por mês, em formato progressivo;',
@@ -15,8 +16,12 @@ const bullets = [
   },
   { text: 'Aulas teóricas, demonstrações práticas e protocolos;', key: 'demonstrações práticas' },
   {
-    text: 'Encontro presencial ao final para integração e prática.',
-    key: 'Encontro presencial',
+    text: 'Encontro presencial em Brasília/DF, em maio de 2027;',
+    key: 'Brasília/DF, em maio de 2027',
+  },
+  {
+    text: 'Dois dias de prática: um sobre o conteúdo do curso e, no dia seguinte, a prática da aula bônus.',
+    key: 'Dois dias de prática',
   },
 ]
 
@@ -31,10 +36,11 @@ export default function ComoFunciona() {
           </SectionTitle>
 
           <Reveal as="p" className="mt-6 max-w-measure text-body font-light text-ink-soft">
-            Formato progressivo, com um encontro principal por mês. Entre os encontros, uma live
-            mensal de uma hora esclarece dúvidas, aprofunda conteúdos e discute casos clínicos
-            reais. Ao final, um encontro presencial integra os conteúdos e a vivência prática da
-            avaliação e do tratamento.
+            O curso começa em 24 de outubro de 2026, em formato progressivo, com um encontro
+            principal por mês. Entre os encontros, uma live mensal de uma hora esclarece dúvidas,
+            aprofunda conteúdos e discute casos clínicos reais. Ao final, um encontro presencial em
+            Brasília/DF, em maio de 2027, integra os conteúdos e a vivência prática da avaliação e
+            do tratamento.
           </Reveal>
 
           <Reveal className="mt-9">

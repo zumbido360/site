@@ -3,14 +3,15 @@ import Button from '../components/Button.jsx'
 import Reveal from '../components/Reveal.jsx'
 import SplitText from '../components/SplitText.jsx'
 import SeloGiratorio from '../components/SeloGiratorio.jsx'
-import { Calendar, Clock, MapPin, Users } from '../components/Icons.jsx'
+import { Calendar, Check, Clock, MapPin, Users } from '../components/Icons.jsx'
 import { useHeroTimeline } from '../hooks/useGsapReveal.js'
 
 const selo = [
   { icon: <Users className="h-4 w-4" />, text: 'Com a Dra. Lisiane Holdefer e o Me. Thales Vanderlei' },
   { icon: <Clock className="h-4 w-4" />, text: '50 horas-aula' },
-  { icon: <Calendar className="h-4 w-4" />, text: 'Encontros mensais + live mensal' },
-  { icon: <MapPin className="h-4 w-4" />, text: 'Encontro presencial ao final' },
+  { icon: <Calendar className="h-4 w-4" />, text: 'Início em 24 de outubro de 2026' },
+  { icon: <Check className="h-4 w-4" />, text: 'Encontros mensais + live mensal' },
+  { icon: <MapPin className="h-4 w-4" />, text: 'Prática presencial em Brasília/DF' },
 ]
 
 export default function Hero() {
