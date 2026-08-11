@@ -20,8 +20,12 @@ const bullets = [
     key: 'Brasília/DF, em maio de 2027',
   },
   {
-    text: 'Dois dias de prática: um sobre o conteúdo do curso e, no dia seguinte, a prática da aula bônus.',
+    text: 'Dois dias de prática: um sobre o conteúdo do curso e, no dia seguinte, a prática da aula bônus;',
     key: 'Dois dias de prática',
+  },
+  {
+    text: 'As aulas ficarão gravadas em uma plataforma para alunos durante um ano.',
+    key: 'gravadas em uma plataforma',
   },
 ]
 
@@ -38,7 +42,7 @@ export default function ComoFunciona() {
           <Reveal as="p" className="mt-6 max-w-measure text-body font-light text-ink-soft">
             O curso começa em 24 de outubro de 2026, em formato progressivo, com um encontro
             principal por mês. Entre os encontros, uma live mensal de uma hora esclarece dúvidas,
-            aprofunda conteúdos e discute casos clínicos reais. Ao final, um encontro presencial em
+            aprofundar conteúdos e discute casos clínicos reais. Ao final, um encontro presencial em
             Brasília/DF, em maio de 2027, integra os conteúdos e a vivência prática da avaliação e
             do tratamento.
           </Reveal>
