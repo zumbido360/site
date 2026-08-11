@@ -41,10 +41,10 @@ export default function ComoFunciona() {
 
           <Reveal as="p" className="mt-6 max-w-measure text-body font-light text-ink-soft">
             O curso começa em 24 de outubro de 2026, em formato progressivo, com um encontro
-            principal por mês. Entre os encontros, uma live mensal de uma hora esclarece dúvidas,
-            aprofundar conteúdos e discute casos clínicos reais. Ao final, um encontro presencial em
-            Brasília/DF, em maio de 2027, integra os conteúdos e a vivência prática da avaliação e
-            do tratamento.
+            principal por mês. Entre os encontros, há uma live mensal de uma hora para esclarecer
+            dúvidas, aprofundar conteúdos e discutir casos clínicos reais. Ao final, um encontro
+            presencial em Brasília/DF, em maio de 2027, integra os conteúdos e a vivência prática
+            da avaliação e do tratamento.
           </Reveal>
 
           <Reveal className="mt-9">
