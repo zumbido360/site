@@ -1,3 +1,6 @@
+import { WhatsApp } from '../components/Icons.jsx'
+import { WHATSAPP_LINK, WHATSAPP_NUMERO } from '../components/BotaoWhatsApp.jsx'
+
 export default function Footer() {
   return (
     /* ================= FOOTER ================= */
@@ -19,12 +22,24 @@ export default function Footer() {
             </p>
           </div>
 
-          <address className="not-italic text-small font-light text-gelo/60">
+          <address className="flex flex-col gap-2 not-italic text-small font-light text-gelo/60 md:items-end">
             <a
               href="mailto:zumbido360fono@gmail.com"
               className="transition-colors hover:text-saude"
             >
               zumbido360fono@gmail.com
+            </a>
+
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              id="cta-whatsapp-footer"
+              data-cta="cta-whatsapp-footer"
+              className="inline-flex items-center gap-2 transition-colors hover:text-saude"
+            >
+              <WhatsApp className="h-4 w-4 text-saude" />
+              {WHATSAPP_NUMERO}
             </a>
           </address>
         </div>

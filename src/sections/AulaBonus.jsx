@@ -88,7 +88,7 @@ export default function AulaBonus() {
                 Para atuação clínica com tDCS, o CFFa estabelece a necessidade de capacitação
                 teórico-prática, específica e adequada, além de conhecimento em Suporte Básico de
                 Vida, este de responsabilidade de cada profissional (Resolução CFFa nº 650/2022,
-                art. 3º e Resolução nº 652/2022).
+                art. 3º e Resolução nº 662/2022).
               </Reveal>
             </div>
 
