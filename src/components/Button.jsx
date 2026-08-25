@@ -20,10 +20,11 @@ export default function Button({
   ...rest
 }) {
   const variants = {
+    /* a borda transparente iguala a altura à das variantes com contorno */
     primary:
-      'bg-saude text-gelo shadow-soft hover:shadow-lift focus-visible:shadow-lift',
+      'border border-transparent bg-saude text-gelo shadow-soft hover:shadow-lift focus-visible:shadow-lift',
     light:
-      'bg-gelo text-oceano shadow-soft hover:shadow-lift',
+      'border border-transparent bg-gelo text-oceano shadow-soft hover:shadow-lift',
     outline:
       'bg-transparent text-oceano border border-line hover:border-saude/60 hover:text-saude',
     outlineLight:

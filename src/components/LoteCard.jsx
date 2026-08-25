@@ -46,7 +46,9 @@ export default function LoteCard({
 
       {prazo && <p className={`mt-1.5 text-small font-light ${subColor}`}>{prazo}</p>}
 
-      <div className={`mt-7 ${compact ? '' : 'border-t pt-7'} ${isLight ? 'border-white/10' : 'border-line'}`}>
+      <div
+        className={`mt-7 ${compact ? '' : 'flex-1 border-t pt-7'} ${isLight ? 'border-white/10' : 'border-line'}`}
+      >
         <p className={`text-small font-light ${bodyColor}`}>Por apenas</p>
 
         <p className="mt-1 flex items-baseline gap-2">
@@ -78,7 +80,7 @@ export default function LoteCard({
       </div>
 
       {!compact && (
-        <div className="mt-8 space-y-3 pt-1">
+        <div className="mt-8 flex flex-col gap-3 pt-1">
           {href ? (
             <>
               {/* Pix: o pagamento é combinado pelo WhatsApp */}
@@ -105,16 +107,25 @@ export default function LoteCard({
             </>
           ) : (
             /* lote sem checkout ainda: avisa em vez de levar a lugar nenhum */
-            <Button
-              id={ctaId}
-              href="#"
-              full
-              className="justify-between"
-              onClick={(event) => {
-                event.preventDefault()
-                mostrarAviso('O lote estará disponível em breve')
-              }}
-            />
+            <>
+              <Button
+                id={ctaId}
+                href="#"
+                full
+                className="justify-between"
+                onClick={(event) => {
+                  event.preventDefault()
+                  mostrarAviso('O lote estará disponível em breve')
+                }}
+              />
+
+              {/* fantasma do 2º botão: mantém os CTAs dos três cards na mesma linha */}
+              <span aria-hidden="true" className="invisible flex">
+                <Button href="#" full className="justify-between">
+                  Pagar no cartão
+                </Button>
+              </span>
+            </>
           )}
         </div>
       )}
