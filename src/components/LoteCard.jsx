@@ -1,5 +1,6 @@
 import Button from './Button.jsx'
 import { mostrarAviso } from './Toast.jsx'
+import { WhatsApp } from './Icons.jsx'
 
 /**
  * Card de lote. `tone`: light = sobre fundo escuro (seção Investimento);
@@ -11,6 +12,7 @@ export default function LoteCard({
   pix,
   cartao,
   condicao,
+  pixHref,
   parcelas,
   totalParcelado,
   parcelamento = true,
@@ -54,7 +56,7 @@ export default function LoteCard({
           <span className={`text-small font-light ${bodyColor}`}>à vista</span>
         </p>
 
-        <p className={`mt-1.5 text-[0.8125rem] font-light ${subColor}`}>pagamento via Pix</p>
+        <p className={`mt-1.5 text-[0.8125rem] font-light ${subColor}`}>no Pix, pelo WhatsApp</p>
 
         {condicao ? (
           <p className={`mt-4 text-small font-light ${bodyColor}`}>{condicao}</p>
@@ -76,22 +78,44 @@ export default function LoteCard({
       </div>
 
       {!compact && (
-        <div className="mt-8 pt-1">
-          {/* lote sem checkout ainda: avisa em vez de levar a lugar nenhum */}
-          <Button
-            id={ctaId}
-            href={href ?? '#'}
-            full
-            className="justify-between"
-            onClick={
-              href
-                ? undefined
-                : (event) => {
-                    event.preventDefault()
-                    mostrarAviso('O lote estará disponível em breve')
-                  }
-            }
-          />
+        <div className="mt-8 space-y-3 pt-1">
+          {href ? (
+            <>
+              {/* Pix: o pagamento é combinado pelo WhatsApp */}
+              <Button
+                id={ctaId}
+                href={pixHref}
+                Icone={WhatsApp}
+                full
+                className="justify-between"
+              >
+                Pagar no Pix
+              </Button>
+
+              {/* Cartão: checkout do Asaas */}
+              <Button
+                id={`${ctaId}-cartao`}
+                href={href}
+                variant={isLight ? 'outlineLight' : 'outline'}
+                full
+                className="justify-between"
+              >
+                Pagar no cartão
+              </Button>
+            </>
+          ) : (
+            /* lote sem checkout ainda: avisa em vez de levar a lugar nenhum */
+            <Button
+              id={ctaId}
+              href="#"
+              full
+              className="justify-between"
+              onClick={(event) => {
+                event.preventDefault()
+                mostrarAviso('O lote estará disponível em breve')
+              }}
+            />
+          )}
         </div>
       )}
     </article>

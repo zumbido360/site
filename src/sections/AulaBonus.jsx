@@ -2,11 +2,20 @@ import SectionTitle from '../components/SectionTitle.jsx'
 import LoteCard from '../components/LoteCard.jsx'
 import Reveal from '../components/Reveal.jsx'
 import SeloGiratorio from '../components/SeloGiratorio.jsx'
-import { ArrowUpRight, Clock } from '../components/Icons.jsx'
+import Button from '../components/Button.jsx'
+import { ArrowUpRight, Clock, WhatsApp } from '../components/Icons.jsx'
+import { linkWhatsApp } from '../components/BotaoWhatsApp.jsx'
 
-/* checkouts da aula bônus no Asaas */
+/* cartão: checkout do Asaas. Pix: combinado pelo WhatsApp. */
 const CHECKOUT_BONUS_COM_CURSO = 'https://www.asaas.com/c/tks3k1xno59c1yzl'
 const CHECKOUT_BONUS_AVULSO = 'https://www.asaas.com/c/yecxonnoxp3fnh8u'
+
+const PIX_BONUS_COM_CURSO = linkWhatsApp(
+  'Olá! Sou inscrito no curso completo e quero garantir a aula bônus de Neuromodulação (R$ 400) pagando no Pix.',
+)
+const PIX_BONUS_AVULSO = linkWhatsApp(
+  'Olá! Quero garantir apenas a aula bônus de Neuromodulação (R$ 1.000) pagando no Pix.',
+)
 
 const comCurso = [
   { lote: '1º lote', pix: 'R$ 400', cartao: 'R$ 500', destaque: true },
@@ -20,7 +29,7 @@ const soBonus = [
   { lote: '3º lote', pix: 'R$ 1.200', cartao: 'R$ 1.300' },
 ]
 
-function GrupoDeLotes({ titulo, lotes, prefix, cta, href, nota }) {
+function GrupoDeLotes({ titulo, lotes, prefix, href, pixHref, nota }) {
   return (
     <div>
       <Reveal as="h3" className="text-h3 font-medium text-oceano">
@@ -41,18 +50,14 @@ function GrupoDeLotes({ titulo, lotes, prefix, cta, href, nota }) {
         </Reveal>
       )}
 
-      <Reveal className="mt-6">
-        <a
-          href={href}
-          id={`cta-${prefix}`}
-          data-cta={`cta-${prefix}`}
-          className="group inline-flex items-center gap-3 whitespace-nowrap rounded-pill bg-saude py-2 pl-6 pr-2 text-[0.9375rem] font-medium text-gelo transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
-        >
-          {cta}
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-gelo/95 text-saude transition-transform duration-300 group-hover:rotate-45">
-            <ArrowUpRight className="h-4 w-4" />
-          </span>
-        </a>
+      <Reveal className="mt-6 flex flex-wrap gap-3">
+        <Button id={`cta-${prefix}-pix`} href={pixHref} Icone={WhatsApp}>
+          Pagar no Pix
+        </Button>
+
+        <Button id={`cta-${prefix}-cartao`} href={href} variant="outline">
+          Pagar no cartão
+        </Button>
       </Reveal>
     </div>
   )
@@ -148,8 +153,8 @@ export default function AulaBonus() {
               titulo="Investimento — condição especial para quem se inscreve no curso completo"
               lotes={comCurso}
               prefix="bonus-com-curso"
-              cta="Garantir a aula bônus"
               href={CHECKOUT_BONUS_COM_CURSO}
+              pixHref={PIX_BONUS_COM_CURSO}
               nota="No 1º lote: R$ 400 à vista no Pix ou 12x de R$ 34,39 no cartão — total de R$ 412,72 com os juros da plataforma."
             />
 
@@ -157,14 +162,15 @@ export default function AulaBonus() {
               titulo="Investimento — para inscritos apenas na aula bônus"
               lotes={soBonus}
               prefix="bonus-avulso"
-              cta="Garantir só a aula bônus"
               href={CHECKOUT_BONUS_AVULSO}
+              pixHref={PIX_BONUS_AVULSO}
               nota="No 1º lote: R$ 1.000 à vista no Pix ou 12x de R$ 83,33 no boleto ou Pix, sem juros."
             />
           </div>
 
-          <Reveal as="p" className="mt-8 text-small font-light italic text-ink-faint">
-            No Pix, o participante garante o menor valor de cada lote.
+          <Reveal as="p" className="mt-8 max-w-measure text-small font-light text-ink-soft">
+            No Pix, o participante garante o menor valor de cada lote — o pagamento é combinado
+            pelo WhatsApp, com a nossa equipe. No cartão, a inscrição é feita na hora, pelo Asaas.
           </Reveal>
 
           <Reveal className="mt-5 flex items-start gap-3 rounded-card border border-line bg-surface p-5">

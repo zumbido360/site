@@ -2,9 +2,13 @@ import SectionTitle from '../components/SectionTitle.jsx'
 import LoteCard from '../components/LoteCard.jsx'
 import Reveal from '../components/Reveal.jsx'
 import { Shield, Flask, Lock, Clock } from '../components/Icons.jsx'
+import { linkWhatsApp } from '../components/BotaoWhatsApp.jsx'
 
-/* checkout do 1º lote no Asaas */
+/* cartão: checkout do Asaas. Pix: combinado pelo WhatsApp. */
 const CHECKOUT_LOTE_1 = 'https://www.asaas.com/c/9pe6vcb4q7f580gf'
+const PIX_LOTE_1 = linkWhatsApp(
+  'Olá! Quero garantir minha vaga no Zumbido 360 (1º lote, R$ 3.800) pagando no Pix.',
+)
 
 const lotes = [
   {
@@ -17,6 +21,7 @@ const lotes = [
     destaque: true,
     ctaId: 'cta-lote-1',
     href: CHECKOUT_LOTE_1,
+    pixHref: PIX_LOTE_1,
   },
   {
     lote: '2º lote',
@@ -72,8 +77,9 @@ export default function Investimento() {
           ))}
         </div>
 
-        <Reveal as="p" className="mt-7 text-center text-small font-light italic text-gelo/50">
-          No Pix você garante o menor valor de cada lote.
+        <Reveal as="p" className="mx-auto mt-7 max-w-2xl text-center text-small font-light text-gelo/55">
+          No Pix você garante o menor valor de cada lote — o pagamento é combinado pelo WhatsApp,
+          com a nossa equipe. No cartão, a inscrição é feita na hora, pelo Asaas.
         </Reveal>
 
         <Reveal className="mx-auto mt-6 flex max-w-2xl items-start justify-center gap-3 rounded-card border border-white/10 bg-white/[0.04] p-5">

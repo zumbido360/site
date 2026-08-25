@@ -3,9 +3,14 @@ import { Close, WhatsApp } from './Icons.jsx'
 
 /* +55 82 9966-8806 */
 export const WHATSAPP_NUMERO = '+55 82 9966-8806'
-export const WHATSAPP_LINK =
-  'https://wa.me/558299668806?text=' +
-  encodeURIComponent('Olá! Tenho uma dúvida sobre a formação Zumbido 360.')
+const WHATSAPP_BASE = 'https://wa.me/558299668806'
+
+/** Monta o link do WhatsApp já com a mensagem escrita. */
+export function linkWhatsApp(mensagem) {
+  return `${WHATSAPP_BASE}?text=${encodeURIComponent(mensagem)}`
+}
+
+export const WHATSAPP_LINK = linkWhatsApp('Olá! Tenho uma dúvida sobre a formação Zumbido 360.')
 
 const CHAMADA = 'Tem alguma dúvida? Fale com o nosso suporte'
 

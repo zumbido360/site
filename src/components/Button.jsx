@@ -16,6 +16,7 @@ export default function Button({
   className = '',
   size = 'default', // default | compact (header/mobile)
   full = false,
+  Icone = ArrowUpRight,
   ...rest
 }) {
   const variants = {
@@ -25,6 +26,8 @@ export default function Button({
       'bg-gelo text-oceano shadow-soft hover:shadow-lift',
     outline:
       'bg-transparent text-oceano border border-line hover:border-saude/60 hover:text-saude',
+    outlineLight:
+      'bg-transparent text-gelo border border-white/25 hover:border-saude/70 hover:text-saude',
   }
 
   const sizes = {
@@ -54,10 +57,12 @@ export default function Button({
             ? 'bg-gelo/95 text-saude'
             : variant === 'light'
               ? 'bg-saude text-gelo'
-              : 'bg-saude/10 text-saude'
+              : variant === 'outlineLight'
+                ? 'bg-white/10 text-gelo'
+                : 'bg-saude/10 text-saude'
         }`}
       >
-        <ArrowUpRight className={size === 'compact' ? 'h-4 w-4' : 'h-[18px] w-[18px]'} />
+        <Icone className={size === 'compact' ? 'h-4 w-4' : 'h-[18px] w-[18px]'} />
       </span>
     </a>
   )
