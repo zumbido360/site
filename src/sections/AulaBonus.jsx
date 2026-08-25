@@ -4,9 +4,9 @@ import Reveal from '../components/Reveal.jsx'
 import SeloGiratorio from '../components/SeloGiratorio.jsx'
 import { ArrowUpRight, Clock } from '../components/Icons.jsx'
 
-/* checkouts da aula bônus na Kiwify */
-const CHECKOUT_BONUS_COM_CURSO = 'https://pay.kiwify.com.br/3q3CtFE'
-const CHECKOUT_BONUS_AVULSO = 'https://pay.kiwify.com.br/FA52U9f'
+/* checkouts da aula bônus no Asaas */
+const CHECKOUT_BONUS_COM_CURSO = 'https://www.asaas.com/c/tks3k1xno59c1yzl'
+const CHECKOUT_BONUS_AVULSO = 'https://www.asaas.com/c/yecxonnoxp3fnh8u'
 
 const comCurso = [
   { lote: '1º lote', pix: 'R$ 400', cartao: 'R$ 500', destaque: true },
@@ -20,7 +20,7 @@ const soBonus = [
   { lote: '3º lote', pix: 'R$ 1.200', cartao: 'R$ 1.300' },
 ]
 
-function GrupoDeLotes({ titulo, lotes, prefix, cta, href }) {
+function GrupoDeLotes({ titulo, lotes, prefix, cta, href, nota }) {
   return (
     <div>
       <Reveal as="h3" className="text-h3 font-medium text-oceano">
@@ -34,6 +34,12 @@ function GrupoDeLotes({ titulo, lotes, prefix, cta, href }) {
           </Reveal>
         ))}
       </div>
+
+      {nota && (
+        <Reveal as="p" className="mt-5 text-small font-light text-ink-soft">
+          {nota}
+        </Reveal>
+      )}
 
       <Reveal className="mt-6">
         <a
@@ -144,6 +150,7 @@ export default function AulaBonus() {
               prefix="bonus-com-curso"
               cta="Garantir a aula bônus"
               href={CHECKOUT_BONUS_COM_CURSO}
+              nota="No 1º lote: R$ 400 à vista no Pix ou 12x de R$ 34,39 no cartão — total de R$ 412,72 com os juros da plataforma."
             />
 
             <GrupoDeLotes
@@ -152,6 +159,7 @@ export default function AulaBonus() {
               prefix="bonus-avulso"
               cta="Garantir só a aula bônus"
               href={CHECKOUT_BONUS_AVULSO}
+              nota="No 1º lote: R$ 1.000 à vista no Pix ou 12x de R$ 83,33 no boleto ou Pix, sem juros."
             />
           </div>
 

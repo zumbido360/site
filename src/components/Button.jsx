@@ -1,7 +1,7 @@
 import { ArrowUpRight } from './Icons.jsx'
 
 /* destino padrão de todo CTA: a seção de lotes.
-   Só os cards de lote passam um href próprio (o checkout da Kiwify). */
+   Só os cards de lote passam um href próprio (o checkout do Asaas). */
 const SECAO_LOTES = '#investimento'
 
 /**

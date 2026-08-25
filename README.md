@@ -33,6 +33,6 @@ O build de produção fica em `dist/` (já copiado de volta para esta pasta).
 ## Pendências de conteúdo
 
 - Todo CTA aponta para a seção de lotes (`#investimento`); só os cards de lote levam ao checkout.
-- Falta o link da Kiwify para o 2º e o 3º lote (o 1º já está ligado).
+- Falta o link do Asaas para o 2º e o 3º lote (o 1º já está ligado).
 - Substituir os placeholders SVG por fotos/mockups reais.
 - Confirmar e-mail de contato no rodapé.

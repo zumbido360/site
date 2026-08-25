@@ -3,15 +3,17 @@ import LoteCard from '../components/LoteCard.jsx'
 import Reveal from '../components/Reveal.jsx'
 import { Shield, Flask, Lock, Clock } from '../components/Icons.jsx'
 
-/* checkout do 1º lote na Kiwify */
-const CHECKOUT_LOTE_1 = 'https://pay.kiwify.com.br/Gdn4e8Y'
+/* checkout do 1º lote no Asaas */
+const CHECKOUT_LOTE_1 = 'https://www.asaas.com/c/9pe6vcb4q7f580gf'
 
 const lotes = [
   {
     lote: '1º lote',
-    prazo: 'Até 31 de agosto.',
+    prazo: 'Até 10 de setembro.',
     pix: 'R$ 3.800',
     condicao: 'Também dá para dividir em 2 cartões ou pagar com cartão + Pix.',
+    parcelas: '12x de R$ 326,46 no cartão',
+    totalParcelado: 'total de R$ 3.917,60 com os juros da plataforma',
     destaque: true,
     ctaId: 'cta-lote-1',
     href: CHECKOUT_LOTE_1,
@@ -35,7 +37,7 @@ const lotes = [
 const selos = [
   { icon: <Lock className="h-4 w-4" />, text: 'Compra segura' },
   { icon: <Flask className="h-4 w-4" />, text: 'Base científica' },
-  { icon: <Shield className="h-4 w-4" />, text: 'Dados protegidos' },
+  { icon: <Shield className="h-4 w-4" />, text: 'Pagamento seguro com Asaas' },
 ]
 
 export default function Investimento() {
@@ -100,7 +102,7 @@ export default function Investimento() {
           <Reveal className="rounded-card border border-white/10 bg-white/[0.04] p-7">
             <h3 className="text-h3 font-medium text-gelo">Como funciona a inscrição</h3>
             <p className="mt-3 text-small font-light leading-relaxed text-gelo/70">
-              A matrícula é feita pela Kiwify, em ambiente seguro. Assim que o pagamento é
+              A matrícula é feita pelo Asaas, em ambiente seguro. Assim que o pagamento é
               confirmado, você recebe o acesso ao grupo oficial do Zumbido 360 no WhatsApp, onde
               acompanha todas as orientações e informações da turma.
             </p>

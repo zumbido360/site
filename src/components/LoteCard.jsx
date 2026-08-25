@@ -11,6 +11,8 @@ export default function LoteCard({
   pix,
   cartao,
   condicao,
+  parcelas,
+  totalParcelado,
   parcelamento = true,
   destaque = false,
   tone = 'light',
@@ -64,9 +66,10 @@ export default function LoteCard({
 
         {parcelamento && (
           <p className={`mt-3 text-small font-light ${bodyColor}`}>
-            Ou também parcele em até <span className={`font-normal ${titleColor}`}>12x</span>
+            Ou também parcele em{' '}
+            <span className={`font-normal ${titleColor}`}>{parcelas ?? 'até 12x'}</span>
             <span className={`mt-1 block text-[0.75rem] ${subColor}`}>
-              *contém juros da plataforma
+              *{totalParcelado ?? 'contém juros da plataforma'}
             </span>
           </p>
         )}

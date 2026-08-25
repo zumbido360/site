@@ -13,7 +13,7 @@ const faq = [
   },
   {
     q: 'Como funciona o pagamento?',
-    a: 'As vagas são vendidas em lotes, com valores diferentes no Pix e no cartão. A inscrição é feita pela Kiwify, em ambiente seguro.',
+    a: 'As vagas são vendidas em lotes, com valores diferentes no Pix e no cartão. No cartão, dá para parcelar em até 12x, com os juros da plataforma. A inscrição é feita pelo Asaas, em ambiente seguro.',
   },
   {
     q: 'O que acontece depois que eu me inscrevo?',
