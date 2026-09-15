@@ -4,10 +4,14 @@ import Reveal from '../components/Reveal.jsx'
 import { Shield, Flask, Lock, Clock } from '../components/Icons.jsx'
 import { linkWhatsApp } from '../components/BotaoWhatsApp.jsx'
 
-/* cartão: checkout do Asaas. Pix: combinado pelo WhatsApp. */
-const CHECKOUT_LOTE_1 = 'https://www.asaas.com/c/9pe6vcb4q7f580gf'
-const PIX_LOTE_1 = linkWhatsApp(
-  'Olá! Quero garantir minha vaga no Zumbido 360 (1º lote, R$ 3.800) pagando no Pix.',
+/* Pix: combinado pelo WhatsApp.
+   Cartão: aguardando o link do Asaas para o 2º lote (R$ 4.000) — até lá,
+   também é combinado pelo WhatsApp. O link antigo do Asaas era do 1º lote. */
+const PIX_LOTE_2 = linkWhatsApp(
+  'Olá! Quero garantir minha vaga no Zumbido 360 (2º lote, R$ 4.000) pagando no Pix.',
+)
+const CARTAO_LOTE_2 = linkWhatsApp(
+  'Olá! Quero garantir minha vaga no Zumbido 360 (2º lote, R$ 4.000) pagando no cartão.',
 )
 
 const lotes = [
@@ -15,20 +19,20 @@ const lotes = [
     lote: '1º lote',
     prazo: 'Até 10 de setembro.',
     pix: 'R$ 3.800',
-    condicao: 'Também dá para dividir em 2 cartões ou pagar com cartão + Pix.',
-    parcelas: '12x de R$ 326,46 no cartão',
-    totalParcelado: 'total de R$ 3.917,60 com os juros da plataforma',
-    destaque: true,
+    condicao: 'Este lote foi encerrado em 10 de setembro.',
+    parcelamento: false,
+    encerrado: true,
     ctaId: 'cta-lote-1',
-    href: CHECKOUT_LOTE_1,
-    pixHref: PIX_LOTE_1,
   },
   {
     lote: '2º lote',
     prazo: 'Até 30 de setembro.',
-    pix: 'R$ 4.200',
-    cartao: 'R$ 4.400',
+    pix: 'R$ 4.000',
+    condicao: 'Mesmo valor no Pix ou no cartão.',
+    destaque: true,
     ctaId: 'cta-lote-2',
+    href: CARTAO_LOTE_2,
+    pixHref: PIX_LOTE_2,
   },
   {
     lote: '3º lote (último)',
@@ -78,8 +82,8 @@ export default function Investimento() {
         </div>
 
         <Reveal as="p" className="mx-auto mt-7 max-w-2xl text-center text-small font-light text-gelo/55">
-          No Pix você garante o menor valor de cada lote — o pagamento é combinado pelo WhatsApp,
-          com a nossa equipe. No cartão, a inscrição é feita na hora, pelo Asaas.
+          No Pix, o pagamento é combinado pelo WhatsApp, com a nossa equipe. No cartão, você
+          parcela em até 12x, com os juros da plataforma.
         </Reveal>
 
         <Reveal className="mx-auto mt-6 flex max-w-2xl items-start justify-center gap-3 rounded-card border border-white/10 bg-white/[0.04] p-5">
