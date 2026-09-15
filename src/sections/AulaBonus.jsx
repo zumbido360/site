@@ -6,26 +6,31 @@ import Button from '../components/Button.jsx'
 import { ArrowUpRight, Clock, WhatsApp } from '../components/Icons.jsx'
 import { linkWhatsApp } from '../components/BotaoWhatsApp.jsx'
 
-/* cartão: checkout do Asaas. Pix: combinado pelo WhatsApp. */
-const CHECKOUT_BONUS_COM_CURSO = 'https://www.asaas.com/c/tks3k1xno59c1yzl'
-const CHECKOUT_BONUS_AVULSO = 'https://www.asaas.com/c/yecxonnoxp3fnh8u'
+/* 2º lote em vigor. Pix e cartão são combinados pelo WhatsApp até existirem
+   os links do Asaas com os valores do 2º lote — os links antigos
+   (tks3k1xno59c1yzl e yecxonnoxp3fnh8u) cobram os valores do 1º lote. */
+const bonus = (produto, forma) =>
+  linkWhatsApp(`Olá! ${produto} pagando no ${forma}.`)
 
-const PIX_BONUS_COM_CURSO = linkWhatsApp(
-  'Olá! Sou inscrito no curso completo e quero garantir a aula bônus de Neuromodulação (R$ 400) pagando no Pix.',
-)
-const PIX_BONUS_AVULSO = linkWhatsApp(
-  'Olá! Quero garantir apenas a aula bônus de Neuromodulação (R$ 1.000) pagando no Pix.',
-)
+const COM_CURSO =
+  'Sou inscrito no curso completo e quero garantir a aula bônus de Neuromodulação (2º lote, R$ 500 no Pix / R$ 600 no cartão)'
+const AVULSO =
+  'Quero garantir apenas a aula bônus de Neuromodulação (2º lote, R$ 1.100 no Pix / R$ 1.200 no cartão)'
+
+const PIX_BONUS_COM_CURSO = bonus(COM_CURSO, 'Pix')
+const CARTAO_BONUS_COM_CURSO = bonus(COM_CURSO, 'cartão')
+const PIX_BONUS_AVULSO = bonus(AVULSO, 'Pix')
+const CARTAO_BONUS_AVULSO = bonus(AVULSO, 'cartão')
 
 const comCurso = [
-  { lote: '1º lote', pix: 'R$ 400', cartao: 'R$ 500', destaque: true },
-  { lote: '2º lote', pix: 'R$ 500', cartao: 'R$ 600' },
+  { lote: '1º lote', pix: 'R$ 400', cartao: 'R$ 500', encerrado: true },
+  { lote: '2º lote', pix: 'R$ 500', cartao: 'R$ 600', destaque: true },
   { lote: '3º lote', pix: 'R$ 600', cartao: 'R$ 700' },
 ]
 
 const soBonus = [
-  { lote: '1º lote', pix: 'R$ 1.000', cartao: 'R$ 1.100', destaque: true },
-  { lote: '2º lote', pix: 'R$ 1.100', cartao: 'R$ 1.200' },
+  { lote: '1º lote', pix: 'R$ 1.000', cartao: 'R$ 1.100', encerrado: true },
+  { lote: '2º lote', pix: 'R$ 1.100', cartao: 'R$ 1.200', destaque: true },
   { lote: '3º lote', pix: 'R$ 1.200', cartao: 'R$ 1.300' },
 ]
 
@@ -153,18 +158,18 @@ export default function AulaBonus() {
               titulo="Investimento — condição especial para quem se inscreve no curso completo"
               lotes={comCurso}
               prefix="bonus-com-curso"
-              href={CHECKOUT_BONUS_COM_CURSO}
+              href={CARTAO_BONUS_COM_CURSO}
               pixHref={PIX_BONUS_COM_CURSO}
-              nota="No 1º lote: R$ 400 à vista no Pix ou 12x de R$ 34,39 no cartão — total de R$ 412,72 com os juros da plataforma."
+              nota="No 2º lote: R$ 500 à vista no Pix ou R$ 600 no cartão, em até 12x com os juros da plataforma."
             />
 
             <GrupoDeLotes
               titulo="Investimento — para inscritos apenas na aula bônus"
               lotes={soBonus}
               prefix="bonus-avulso"
-              href={CHECKOUT_BONUS_AVULSO}
+              href={CARTAO_BONUS_AVULSO}
               pixHref={PIX_BONUS_AVULSO}
-              nota="No 1º lote: R$ 1.000 à vista no Pix ou 12x de R$ 83,33 no boleto ou Pix, sem juros."
+              nota="No 2º lote: R$ 1.100 à vista no Pix ou R$ 1.200 no cartão, em até 12x com os juros da plataforma."
             />
           </div>
 

@@ -26,7 +26,9 @@ export default function LoteCard({
   const isLight = tone === 'light'
 
   const shell = encerrado
-    ? 'border-white/10 bg-white/[0.02] grayscale'
+    ? isLight
+      ? 'border-white/10 bg-white/[0.02] grayscale'
+      : 'border-line bg-gelo/60 grayscale'
     : isLight
       ? `bg-white/[0.04] hover:-translate-y-1 ${destaque ? 'border-saude/45' : 'border-white/10'}`
       : `bg-gelo hover:-translate-y-1 ${destaque ? 'border-saude/40' : 'border-line'}`
@@ -37,13 +39,17 @@ export default function LoteCard({
 
   return (
     <article
-      className={`relative flex h-full flex-col overflow-hidden rounded-card border p-7 transition-all duration-300 md:p-8 ${
+      className={`relative flex h-full flex-col rounded-card border p-7 transition-all duration-300 md:p-8 ${
         encerrado ? 'pt-16 md:pt-16' : ''
       } ${shell}`}
     >
       {/* faixa de lote encerrado */}
       {encerrado && (
-        <span className="absolute inset-x-0 top-0 bg-white/[0.08] py-2.5 text-center text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-gelo/60">
+        <span
+          className={`absolute inset-x-0 top-0 rounded-t-[21px] py-2.5 text-center text-[0.6875rem] font-semibold uppercase tracking-[0.2em] ${
+            isLight ? 'bg-white/[0.08] text-gelo/60' : 'bg-oceano/[0.06] text-ink-faint'
+          }`}
+        >
           Lote encerrado
         </span>
       )}
@@ -54,7 +60,13 @@ export default function LoteCard({
         </span>
       )}
 
-      <h3 className={`text-h3 font-medium ${encerrado ? 'text-gelo/50' : titleColor}`}>{lote}</h3>
+      <h3
+        className={`text-h3 font-medium ${
+          encerrado ? (isLight ? 'text-gelo/50' : 'text-oceano/45') : titleColor
+        }`}
+      >
+        {lote}
+      </h3>
 
       {prazo && <p className={`mt-1.5 text-small font-light ${subColor}`}>{prazo}</p>}
 
@@ -68,7 +80,9 @@ export default function LoteCard({
         <p className="mt-1 flex items-baseline gap-2">
           <span
             className={`text-[2.125rem] font-medium leading-none tracking-[-0.01em] ${
-              encerrado ? 'text-gelo/35 line-through decoration-1' : 'text-saude'
+              encerrado
+                ? `line-through decoration-1 ${isLight ? 'text-gelo/35' : 'text-ink-faint'}`
+                : 'text-saude'
             }`}
           >
             {pix}
