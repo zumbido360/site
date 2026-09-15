@@ -19,13 +19,13 @@ const PIX_BONUS_AVULSO = linkWhatsApp(
 
 const comCurso = [
   { lote: '1º lote', pix: 'R$ 400', cartao: 'R$ 500', encerrado: true },
-  { lote: '2º lote', pix: 'R$ 500', cartao: 'R$ 600', destaque: true },
+  { lote: '2º lote', pix: 'R$ 500', cartao: 'R$ 500', destaque: true },
   { lote: '3º lote', pix: 'R$ 600', cartao: 'R$ 700' },
 ]
 
 const soBonus = [
   { lote: '1º lote', pix: 'R$ 1.000', cartao: 'R$ 1.100', encerrado: true },
-  { lote: '2º lote', pix: 'R$ 1.100', cartao: 'R$ 1.200', destaque: true },
+  { lote: '2º lote', pix: 'R$ 1.100', cartao: 'R$ 1.100', destaque: true },
   { lote: '3º lote', pix: 'R$ 1.200', cartao: 'R$ 1.300' },
 ]
 
@@ -155,7 +155,7 @@ export default function AulaBonus() {
               prefix="bonus-com-curso"
               href={CARTAO_BONUS_COM_CURSO}
               pixHref={PIX_BONUS_COM_CURSO}
-              nota="No 2º lote: R$ 500 à vista no Pix ou R$ 600 no cartão, em até 12x com os juros da plataforma."
+              nota="No 2º lote: R$ 500 à vista no Pix ou no cartão de crédito, em até 12x com os juros da plataforma."
             />
 
             <GrupoDeLotes
@@ -164,7 +164,7 @@ export default function AulaBonus() {
               prefix="bonus-avulso"
               href={CARTAO_BONUS_AVULSO}
               pixHref={PIX_BONUS_AVULSO}
-              nota="No 2º lote: R$ 1.100 à vista no Pix ou R$ 1.200 no cartão, em até 12x com os juros da plataforma."
+              nota="No 2º lote: R$ 1.100 à vista no Pix ou no cartão de crédito, em até 12x com os juros da plataforma."
             />
           </div>
 
