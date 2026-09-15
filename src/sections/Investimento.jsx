@@ -4,14 +4,10 @@ import Reveal from '../components/Reveal.jsx'
 import { Shield, Flask, Lock, Clock } from '../components/Icons.jsx'
 import { linkWhatsApp } from '../components/BotaoWhatsApp.jsx'
 
-/* Pix: combinado pelo WhatsApp.
-   Cartão: aguardando o link do Asaas para o 2º lote (R$ 4.000) — até lá,
-   também é combinado pelo WhatsApp. O link antigo do Asaas era do 1º lote. */
+/* 2º lote — cartão: checkout do Asaas (R$ 4.000). Pix: combinado pelo WhatsApp. */
+const CARTAO_LOTE_2 = 'https://www.asaas.com/c/9pe6vcb4q7f580gf'
 const PIX_LOTE_2 = linkWhatsApp(
   'Olá! Quero garantir minha vaga no Zumbido 360 (2º lote, R$ 4.000) pagando no Pix.',
-)
-const CARTAO_LOTE_2 = linkWhatsApp(
-  'Olá! Quero garantir minha vaga no Zumbido 360 (2º lote, R$ 4.000) pagando no cartão.',
 )
 
 const lotes = [

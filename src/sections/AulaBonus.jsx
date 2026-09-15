@@ -6,21 +6,16 @@ import Button from '../components/Button.jsx'
 import { ArrowUpRight, Clock, WhatsApp } from '../components/Icons.jsx'
 import { linkWhatsApp } from '../components/BotaoWhatsApp.jsx'
 
-/* 2º lote em vigor. Pix e cartão são combinados pelo WhatsApp até existirem
-   os links do Asaas com os valores do 2º lote — os links antigos
-   (tks3k1xno59c1yzl e yecxonnoxp3fnh8u) cobram os valores do 1º lote. */
-const bonus = (produto, forma) =>
-  linkWhatsApp(`Olá! ${produto} pagando no ${forma}.`)
+/* 2º lote — cartão: checkout do Asaas. Pix: combinado pelo WhatsApp. */
+const CARTAO_BONUS_COM_CURSO = 'https://www.asaas.com/c/tks3k1xno59c1yzl' // R$ 500
+const CARTAO_BONUS_AVULSO = 'https://www.asaas.com/c/yecxonnoxp3fnh8u' // R$ 1.100
 
-const COM_CURSO =
-  'Sou inscrito no curso completo e quero garantir a aula bônus de Neuromodulação (2º lote, R$ 500 no Pix / R$ 600 no cartão)'
-const AVULSO =
-  'Quero garantir apenas a aula bônus de Neuromodulação (2º lote, R$ 1.100 no Pix / R$ 1.200 no cartão)'
-
-const PIX_BONUS_COM_CURSO = bonus(COM_CURSO, 'Pix')
-const CARTAO_BONUS_COM_CURSO = bonus(COM_CURSO, 'cartão')
-const PIX_BONUS_AVULSO = bonus(AVULSO, 'Pix')
-const CARTAO_BONUS_AVULSO = bonus(AVULSO, 'cartão')
+const PIX_BONUS_COM_CURSO = linkWhatsApp(
+  'Olá! Sou inscrito no curso completo e quero garantir a aula bônus de Neuromodulação (2º lote, R$ 500) pagando no Pix.',
+)
+const PIX_BONUS_AVULSO = linkWhatsApp(
+  'Olá! Quero garantir apenas a aula bônus de Neuromodulação (2º lote, R$ 1.100) pagando no Pix.',
+)
 
 const comCurso = [
   { lote: '1º lote', pix: 'R$ 400', cartao: 'R$ 500', encerrado: true },
