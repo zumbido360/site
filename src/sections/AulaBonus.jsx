@@ -73,7 +73,7 @@ export default function AulaBonus() {
           <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-12">
             <div>
               <Reveal className="mb-7 flex flex-wrap gap-2.5">
-                {['Módulo opcional', 'Venda separada', '20 horas-aula'].map((tag) => (
+                {['Módulo opcional', 'Venda separada', '50 horas-aula'].map((tag) => (
                   <span
                     key={tag}
                     className="rounded-pill border border-saude/30 bg-saude/[0.07] px-3 py-1 text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-saude"

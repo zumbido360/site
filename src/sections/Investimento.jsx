@@ -22,7 +22,7 @@ const lotes = [
   },
   {
     lote: '2º lote',
-    prazo: 'Até 30 de setembro.',
+    prazo: 'Até 9 de outubro.',
     pix: 'R$ 4.000',
     condicao: 'Mesmo valor no Pix ou no cartão.',
     destaque: true,
