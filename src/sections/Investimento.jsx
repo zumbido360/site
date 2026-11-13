@@ -2,14 +2,8 @@ import SectionTitle from '../components/SectionTitle.jsx'
 import LoteCard from '../components/LoteCard.jsx'
 import Reveal from '../components/Reveal.jsx'
 import { Shield, Flask, Lock, Clock } from '../components/Icons.jsx'
-import { linkWhatsApp } from '../components/BotaoWhatsApp.jsx'
 
-/* 2º lote — cartão: checkout do Asaas (R$ 4.000). Pix: combinado pelo WhatsApp. */
-const CARTAO_LOTE_2 = 'https://www.asaas.com/c/9pe6vcb4q7f580gf'
-const PIX_LOTE_2 = linkWhatsApp(
-  'Olá! Quero garantir minha vaga no Zumbido 360 (2º lote, R$ 4.000) pagando no Pix.',
-)
-
+/* todos os lotes encerrados: sem checkout e sem botões */
 const lotes = [
   {
     lote: '1º lote',
@@ -24,17 +18,18 @@ const lotes = [
     lote: '2º lote',
     prazo: 'Até 9 de outubro.',
     pix: 'R$ 4.000',
-    condicao: 'Mesmo valor no Pix ou no cartão.',
-    destaque: true,
+    condicao: 'Este lote foi encerrado em 9 de outubro.',
+    parcelamento: false,
+    encerrado: true,
     ctaId: 'cta-lote-2',
-    href: CARTAO_LOTE_2,
-    pixHref: PIX_LOTE_2,
   },
   {
     lote: '3º lote (último)',
-    prazo: 'Após 30 de setembro.',
+    prazo: 'Após 9 de outubro.',
     pix: 'R$ 4.400',
-    cartao: 'R$ 4.600',
+    condicao: 'Este lote está encerrado.',
+    parcelamento: false,
+    encerrado: true,
     ctaId: 'cta-lote-3',
   },
 ]

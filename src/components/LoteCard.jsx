@@ -107,25 +107,10 @@ export default function LoteCard({
         )}
       </div>
 
-      {!compact && (
+      {/* lote encerrado não tem CTA nenhum */}
+      {!compact && !encerrado && (
         <div className="mt-8 flex flex-col gap-3 pt-1">
-          {encerrado ? (
-            <>
-              <span
-                aria-disabled="true"
-                className="inline-flex w-full items-center justify-center rounded-pill border border-white/10 bg-white/[0.04] h-[58px] text-[0.95rem] font-medium text-gelo/40"
-              >
-                Lote encerrado
-              </span>
-
-              {/* fantasma do 2º botão: mantém os CTAs dos três cards na mesma linha */}
-              <span aria-hidden="true" className="invisible flex">
-                <Button href="#" full className="justify-between">
-                  Pagar no cartão
-                </Button>
-              </span>
-            </>
-          ) : href ? (
+          {href ? (
             <>
               {/* Pix: o pagamento é combinado pelo WhatsApp */}
               <Button
