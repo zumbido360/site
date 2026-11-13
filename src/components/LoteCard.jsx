@@ -39,24 +39,20 @@ export default function LoteCard({
 
   return (
     <article
-      className={`relative flex h-full flex-col rounded-card border p-7 transition-all duration-300 md:p-8 ${
-        encerrado ? 'pt-16 md:pt-16' : ''
-      } ${shell}`}
+      className={`relative flex h-full flex-col rounded-card border p-7 transition-all duration-300 md:p-8 ${shell}`}
     >
-      {/* faixa de lote encerrado */}
-      {encerrado && (
+      {/* selo flutuante: fica fora do fluxo para os três cards alinharem */}
+      {(encerrado || destaque) && (
         <span
-          className={`absolute inset-x-0 top-0 rounded-t-[21px] py-2.5 text-center text-[0.6875rem] font-semibold uppercase tracking-[0.2em] ${
-            isLight ? 'bg-white/[0.08] text-gelo/60' : 'bg-oceano/[0.06] text-ink-faint'
+          className={`absolute -top-3 left-7 rounded-pill px-3.5 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] ${
+            encerrado
+              ? isLight
+                ? 'bg-white/10 text-gelo/60'
+                : 'bg-oceano/10 text-ink-faint'
+              : 'bg-saude text-gelo'
           }`}
         >
-          Lote encerrado
-        </span>
-      )}
-
-      {destaque && !encerrado && (
-        <span className="absolute -top-3 left-7 rounded-pill bg-saude px-3.5 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-gelo">
-          Lote atual
+          {encerrado ? 'Lote encerrado' : 'Lote atual'}
         </span>
       )}
 
