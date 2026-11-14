@@ -2,34 +2,22 @@ import SectionTitle from '../components/SectionTitle.jsx'
 import LoteCard from '../components/LoteCard.jsx'
 import Reveal from '../components/Reveal.jsx'
 import SeloGiratorio from '../components/SeloGiratorio.jsx'
-import Button from '../components/Button.jsx'
-import { ArrowUpRight, Clock, WhatsApp } from '../components/Icons.jsx'
-import { linkWhatsApp } from '../components/BotaoWhatsApp.jsx'
+import { Clock } from '../components/Icons.jsx'
 
-/* 2º lote — cartão: checkout do Asaas. Pix: combinado pelo WhatsApp. */
-const CARTAO_BONUS_COM_CURSO = 'https://www.asaas.com/c/tks3k1xno59c1yzl' // R$ 500
-const CARTAO_BONUS_AVULSO = 'https://www.asaas.com/c/yecxonnoxp3fnh8u' // R$ 1.100
-
-const PIX_BONUS_COM_CURSO = linkWhatsApp(
-  'Olá! Sou inscrito no curso completo e quero garantir a aula bônus de Neuromodulação (2º lote, R$ 500) pagando no Pix.',
-)
-const PIX_BONUS_AVULSO = linkWhatsApp(
-  'Olá! Quero garantir apenas a aula bônus de Neuromodulação (2º lote, R$ 1.100) pagando no Pix.',
-)
-
+/* todos os lotes da aula bônus encerrados: sem checkout e sem botões */
 const comCurso = [
   { lote: '1º lote', pix: 'R$ 400', cartao: 'R$ 500', encerrado: true },
-  { lote: '2º lote', pix: 'R$ 500', cartao: 'R$ 500', destaque: true },
-  { lote: '3º lote', pix: 'R$ 600', cartao: 'R$ 700' },
+  { lote: '2º lote', pix: 'R$ 500', cartao: 'R$ 500', encerrado: true },
+  { lote: '3º lote', pix: 'R$ 600', cartao: 'R$ 700', encerrado: true },
 ]
 
 const soBonus = [
   { lote: '1º lote', pix: 'R$ 1.000', cartao: 'R$ 1.100', encerrado: true },
-  { lote: '2º lote', pix: 'R$ 1.100', cartao: 'R$ 1.100', destaque: true },
-  { lote: '3º lote', pix: 'R$ 1.200', cartao: 'R$ 1.300' },
+  { lote: '2º lote', pix: 'R$ 1.100', cartao: 'R$ 1.100', encerrado: true },
+  { lote: '3º lote', pix: 'R$ 1.200', cartao: 'R$ 1.300', encerrado: true },
 ]
 
-function GrupoDeLotes({ titulo, lotes, prefix, href, pixHref, nota }) {
+function GrupoDeLotes({ titulo, lotes, prefix }) {
   return (
     <div>
       <Reveal as="h3" className="text-h3 font-medium text-oceano">
@@ -43,22 +31,6 @@ function GrupoDeLotes({ titulo, lotes, prefix, href, pixHref, nota }) {
           </Reveal>
         ))}
       </div>
-
-      {nota && (
-        <Reveal as="p" className="mt-5 text-small font-light text-ink-soft">
-          {nota}
-        </Reveal>
-      )}
-
-      <Reveal className="mt-6 flex flex-wrap gap-3">
-        <Button id={`cta-${prefix}-pix`} href={pixHref} Icone={WhatsApp}>
-          Pagar no Pix
-        </Button>
-
-        <Button id={`cta-${prefix}-cartao`} href={href} variant="outline">
-          Pagar no cartão
-        </Button>
-      </Reveal>
     </div>
   )
 }
@@ -153,25 +125,14 @@ export default function AulaBonus() {
               titulo="Investimento — condição especial para quem se inscreve no curso completo"
               lotes={comCurso}
               prefix="bonus-com-curso"
-              href={CARTAO_BONUS_COM_CURSO}
-              pixHref={PIX_BONUS_COM_CURSO}
-              nota="No 2º lote: R$ 500 à vista no Pix ou no cartão de crédito, em até 12x com os juros da plataforma."
             />
 
             <GrupoDeLotes
               titulo="Investimento — para inscritos apenas na aula bônus"
               lotes={soBonus}
               prefix="bonus-avulso"
-              href={CARTAO_BONUS_AVULSO}
-              pixHref={PIX_BONUS_AVULSO}
-              nota="No 2º lote: R$ 1.100 à vista no Pix ou no cartão de crédito, em até 12x com os juros da plataforma."
             />
           </div>
-
-          <Reveal as="p" className="mt-8 max-w-measure text-small font-light text-ink-soft">
-            No Pix, o participante garante o menor valor de cada lote — o pagamento é combinado
-            pelo WhatsApp, com a nossa equipe. No cartão, a inscrição é feita na hora, pelo Asaas.
-          </Reveal>
 
           <Reveal className="mt-5 flex items-start gap-3 rounded-card border border-line bg-surface p-5">
             <span className="mt-0.5 text-saude">
@@ -180,25 +141,6 @@ export default function AulaBonus() {
             <p className="text-small font-light text-ink-soft">
               As aulas ficarão gravadas em uma plataforma para alunos durante um ano.
             </p>
-          </Reveal>
-
-          {/* âncora para a seção de lotes do curso */}
-          <Reveal className="mt-10 flex flex-wrap items-center gap-5 rounded-card border border-saude/25 bg-saude/[0.06] p-7">
-            <p className="max-w-measure flex-1 text-body font-light text-ink-soft">
-              A condição especial acima vale para quem já está inscrito no curso completo.
-            </p>
-
-            <a
-              href="#investimento"
-              id="cta-bonus-lotes"
-              data-cta="cta-bonus-lotes"
-              className="group inline-flex items-center gap-3 whitespace-nowrap rounded-pill bg-saude py-2 pl-6 pr-2 text-[0.9375rem] font-medium text-gelo transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lift"
-            >
-              Ver os lotes do curso
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-gelo/95 text-saude transition-transform duration-300 group-hover:rotate-45">
-                <ArrowUpRight className="h-4 w-4" />
-              </span>
-            </a>
           </Reveal>
 
           {/* --- aviso legal --- */}
