@@ -1,0 +1,22 @@
+# O index.html nunca fica preso no cache do navegador: é ele que aponta
+# para o JS/CSS novo a cada deploy.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # /assets/index-*.js|css têm hash no nome: podem ficar no cache para sempre
+  <FilesMatch "^index-.*\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # fontes não mudam de nome, mas também não mudam de conteúdo
+  <FilesMatch "\.(woff2|woff|ttf)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+
+  # imagens são trocadas sem mudar de nome: cache curto, sempre revalidado
+  <FilesMatch "\.(webp|jpg|jpeg|png|svg)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+</IfModule>
